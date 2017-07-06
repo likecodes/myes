@@ -1,10 +1,7 @@
-package com.uxunchina.changsha.aut.control;
+package com.uxunchina.changsha.control;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Created by leo on 2017/7/3.
@@ -13,13 +10,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class AuthCtrl {
 
     @RequestMapping("/")
-    @ResponseBody
     public String getRolesInfo(){
-        return "hell world";
+        return "login";
+    }
+
+    @RequestMapping("/test")
+    public String test(){
+       return "test";
     }
 
     @RequestMapping("/login")
     public String login(){
-       return "测试";
+        return "login";
     }
 }
