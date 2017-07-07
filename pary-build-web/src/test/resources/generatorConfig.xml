@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <classPathEntry location="src/test/resources/ojdbc6-11204.jar" />
+    <!--加载属性文件 -->
+    <context id="context1" targetRuntime="MyBatis3">
+        <!-- 实现自定义的代码生成器plugin -->
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        <plugin type="com.dev.tools.GenPlugin"/>
+
+        <!-- 此处是将UserMapper改名为UserDao 接口 当然 想改成什么都行~-->
+        <plugin type="com.dev.tools.RenameJavaMapperPlugin">
+            <property name="searchString" value="Mapper$" />
+            <property name="replaceString" value="Dao" />
+            <property name="delSuffixString" value="T[A-Za-z]{3}(?!\.)" />
+            <property name="delModelSuffixString" value="^T[A-Za-z]{3}" />
+        </plugin>
+
+        <commentGenerator type="com.dev.tools.CommentPlugin">
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+        </commentGenerator>
+        <!-- 数据库连接URL，用户名，密码 -->
+        <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+                        connectionURL="jdbc:oracle:thin:@192.168.1.202:1521:orcl"
+                        userId="party"
+                        password="party"
+        ><property name="remarksReporting" value="true"></property>
+        </jdbcConnection>
+        <!--生成模型的包名和位置 -->
+        <javaModelGenerator targetPackage="com.uxunchina.changsha.aut.pojo.po"
+                            targetProject="src/main/java" />
+        <!--映射文件的包名和位置 -->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources" />
+        <!--DAO的包名和位置 -->
+        <javaClientGenerator
+                targetPackage="com.uxunchina.changsha.aut.dao"
+                targetProject="src/main/java"
+                type="XMLMAPPER"/>
+        <!--要生成哪些表 -->
+        <table tableName="T_AUT%"
+               enableSelectByExample="false"
+               enableDeleteByExample="false"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               selectByExampleQueryId="false"
+               >
+        </table>
+    </context>
+</generatorConfiguration>

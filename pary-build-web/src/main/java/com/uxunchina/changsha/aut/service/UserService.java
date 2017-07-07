@@ -1,6 +1,6 @@
-package com.uxunchina.changsha.service;
+package com.uxunchina.changsha.aut.service;
 
-import com.uxunchina.changsha.pojo.dto.User;
+import com.uxunchina.changsha.aut.pojo.dto.User;
 
 import java.util.List;
 import java.util.Set;

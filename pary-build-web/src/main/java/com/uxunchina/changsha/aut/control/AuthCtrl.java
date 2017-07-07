@@ -1,4 +1,4 @@
-package com.uxunchina.changsha.control;
+package com.uxunchina.changsha.aut.control;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,7 +1,7 @@
-package com.uxunchina.changsha.service.impl;
+package com.uxunchina.changsha.aut.service.impl;
 
-import com.uxunchina.changsha.pojo.dto.User;
-import com.uxunchina.changsha.service.UserService;
+import com.uxunchina.changsha.aut.pojo.dto.User;
+import com.uxunchina.changsha.aut.service.UserService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

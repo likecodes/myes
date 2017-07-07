@@ -1,0 +1,4564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.uxunchina.changsha.aut.dao.PermissionDao">
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_PERMISSION
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    insert into T_AUT_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        PERM_ID,
+      </if>
+      <if test="permName != null">
+        PERM_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="resouce != null">
+        RESOUCE,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
+        #{permId,jdbcType=VARCHAR},
+      </if>
+      <if test="permName != null">
+        #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission">
+    update T_AUT_PERMISSION
+    <set>
+      <if test="permName != null">
+        PERM_NAME = #{permName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resouce != null">
+        RESOUCE = #{resouce,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PERM_ID = #{permId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="permName != null">
+         and PERM_NAME = #{permName,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null">
+         and DESCRIPTION = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="resouce != null">
+         and RESOUCE = #{resouce,jdbcType=VARCHAR}
+      </if>
+      <if test="parentId != null">
+         and PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutPermission" resultMap="BaseResultMap">
+     select * from T_AUT_PERMISSION
+    <include refid="sql_where" />
+  </select>
+</mapper>

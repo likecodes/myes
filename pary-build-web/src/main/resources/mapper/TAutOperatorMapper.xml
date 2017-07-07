@@ -1,0 +1,3940 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.uxunchina.changsha.aut.dao.OperatorDao">
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    <id column="OPERATOR_ID" jdbcType="VARCHAR" property="operatorId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="USERNAME_CN" jdbcType="VARCHAR" property="usernameCn" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OPERATOR_ID, USERNAME, USERNAME_CN, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_AUT_OPERATOR
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    insert into T_AUT_OPERATOR
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        OPERATOR_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="operatorId != null">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator">
+    update T_AUT_OPERATOR
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="usernameCn != null">
+        USERNAME_CN = #{usernameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where">
+    <where>
+      <if test="username != null">
+         and USERNAME = #{username,jdbcType=VARCHAR}
+      </if>
+      <if test="usernameCn != null">
+         and USERNAME_CN = #{usernameCn,jdbcType=VARCHAR}
+      </if>
+      <if test="userPassword != null">
+         and USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.uxunchina.changsha.aut.pojo.po.TAutOperator" resultMap="BaseResultMap">
+     select * from T_AUT_OPERATOR
+    <include refid="sql_where" />
+  </select>
+</mapper>
