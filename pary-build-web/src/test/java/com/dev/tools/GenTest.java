@@ -25,9 +25,9 @@ public class GenTest {
     @Before
     public void before() {
         //读取mybatis参数
-        configFile = new File("E:\\ideaProject\\party-build\\pary-build-web\\src\\test\\resources\\generatorConfig.xml");
+        configFile = new File("E:\\IdeaProject\\myes\\pary-build-web\\src\\test\\resources\\generatorConfig.xml");
+//        configFile = new File("E:\\ideaProject\\party-build\\pary-build-web\\src\\test\\resources\\generatorConfig.xml");
 
-//        configFile = new File("/Users/zhangsiyuan/Documents/MybatisFun/Mybatis-Chapter9-GeneratorPlugin/src/main/resources/mybatisConfig.xml");
     }
 
     @Test

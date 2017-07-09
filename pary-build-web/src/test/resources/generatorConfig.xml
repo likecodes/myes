@@ -6,14 +6,14 @@
     <context id="context1" targetRuntime="MyBatis3">
         <!-- 实现自定义的代码生成器plugin -->
         <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
-        <plugin type="com.dev.tools.GenPlugin"/>
+        <!--<plugin type="com.dev.tools.GenPlugin"/>-->
 
         <!-- 此处是将UserMapper改名为UserDao 接口 当然 想改成什么都行~-->
-        <plugin type="com.dev.tools.RenameJavaMapperPlugin">
+        <plugin type="com.dev.tools.RenameMapperAndPoPlugin">
             <property name="searchString" value="Mapper$" />
             <property name="replaceString" value="Dao" />
             <property name="delSuffixString" value="T[A-Za-z]{3}(?!\.)" />
-            <property name="delModelSuffixString" value="^T[A-Za-z]{3}" />
+            <property name="delModelSuffixString" value="T[A-Za-z]{3}(?!\.)" />
         </plugin>
 
         <commentGenerator type="com.dev.tools.CommentPlugin">
@@ -21,7 +21,7 @@
         </commentGenerator>
         <!-- 数据库连接URL，用户名，密码 -->
         <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
-                        connectionURL="jdbc:oracle:thin:@192.168.1.202:1521:orcl"
+                        connectionURL="jdbc:oracle:thin:@//192.168.1.101:1521/XEXDB"
                         userId="party"
                         password="party"
         ><property name="remarksReporting" value="true"></property>
