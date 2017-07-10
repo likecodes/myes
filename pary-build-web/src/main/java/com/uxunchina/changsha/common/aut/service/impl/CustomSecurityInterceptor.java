@@ -27,12 +27,6 @@ public class CustomSecurityInterceptor extends AbstractSecurityInterceptor imple
         super.setAccessDecisionManager(accessDecisionManager);
     }
 
-//    @Autowired
-//    public  void setRejectPublicInvocations(){
-//        super.setRejectPublicInvocations(true);
-//    }
-
-
 
 
     @Override

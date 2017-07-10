@@ -28,8 +28,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserDetailsService customUserDetailsService;
 
-    @Autowired
-    private AccessDeniedHandler customAccessDeniedHandler;
 
 
     @Override
