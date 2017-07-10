@@ -105,4 +105,5 @@
        LEFT JOIN T_AUT_PERMISSION D ON C.PERMISSION_ID = D.PERM_ID
        where A.OPERATOR_ID= #{userId,jdbcType=VARCHAR}
   </select>
+
 </mapper>

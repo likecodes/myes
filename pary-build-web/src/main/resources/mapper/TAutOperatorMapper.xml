@@ -85,4 +85,6 @@
       USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
     where OPERATOR_ID = #{operatorId,jdbcType=VARCHAR}
   </update>
+
+
 </mapper>

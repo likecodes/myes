@@ -68,4 +68,15 @@
       ROLE_DESC = #{roleDesc,jdbcType=VARCHAR}
     where ROLE_ID = #{roleId,jdbcType=VARCHAR}
   </update>
+  <select id="selectRolesByResource" resultMap="BaseResultMap" parameterType="string" >
+       SELECT A.ROLE_ID,A.ROLE_NAME,A.ROLE_DESC FROM  T_AUT_ROLE A
+             LEFT JOIN   T_AUT_ROLE_PERMISSION B ON A.ROLE_ID =  B.ROLE_ID
+             WHERE B.PERMISSION_ID=#{permissionId,jdbcType=VARCHAR}
+  </select>
+
+  <select id="selectRolesByOperatorId" resultMap="BaseResultMap">
+         SELECT A.ROLE_ID,A.ROLE_NAME,A.ROLE_DESC FROM  T_AUT_ROLE A
+                   LEFT JOIN   T_AUT_USER_ROLE  B ON A.ROLE_ID =  B.ROLE_ID
+                   WHERE B.OPERATOR_ID=#{operatorId,jdbcType=VARCHAR}
+  </select>
 </mapper>

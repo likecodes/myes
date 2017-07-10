@@ -21,7 +21,7 @@
         </commentGenerator>
         <!-- 数据库连接URL，用户名，密码 -->
         <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
-                        connectionURL="jdbc:oracle:thin:@//192.168.1.101:1521/XEXDB"
+                        connectionURL="jdbc:oracle:thin:@192.168.1.202:1521/orcl"
                         userId="party"
                         password="party"
         ><property name="remarksReporting" value="true"></property>

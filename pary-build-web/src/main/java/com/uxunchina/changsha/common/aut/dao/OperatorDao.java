@@ -1,6 +1,10 @@
 package com.uxunchina.changsha.common.aut.dao;
 
 import com.uxunchina.changsha.common.aut.pojo.po.OperatorPo;
+import com.uxunchina.changsha.common.aut.pojo.po.PermissionPo;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface OperatorDao {
     int deleteByPrimaryKey(String operatorId);
@@ -16,4 +20,5 @@ public interface OperatorDao {
     int updateByPrimaryKeySelective(OperatorPo record);
 
     int updateByPrimaryKey(OperatorPo record);
+
 }

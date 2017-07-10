@@ -1,4 +1,4 @@
-package com.uxunchina.changsha.biz.aut.control;
+package com.uxunchina.changsha.common.aut.control;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +12,11 @@ public class AuthCtrl {
 
     @RequestMapping("/")
     public String getRolesInfo(){
+        return "index";
+    }
+
+    @RequestMapping("/index")
+    public String index(){
         return "index";
     }
 
@@ -29,5 +34,15 @@ public class AuthCtrl {
     @RequestMapping("/login")
     public String login(){
         return "login";
+    }
+
+    @RequestMapping("/hello1")
+    public String hello1(){
+        return "hello1";
+    }
+
+    @RequestMapping("/403")
+    public String accessDenied(){
+        return "403";
     }
 }

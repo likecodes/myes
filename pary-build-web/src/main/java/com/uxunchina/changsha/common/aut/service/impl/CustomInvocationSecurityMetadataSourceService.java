@@ -1,7 +1,9 @@
-package com.uxunchina.changsha.common.aut.service;
+package com.uxunchina.changsha.common.aut.service.impl;
 
 import com.uxunchina.changsha.common.aut.dao.PermissionDao;
+import com.uxunchina.changsha.common.aut.dao.RoleDao;
 import com.uxunchina.changsha.common.aut.pojo.po.PermissionPo;
+import com.uxunchina.changsha.common.aut.pojo.po.RolePo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +29,9 @@ public class CustomInvocationSecurityMetadataSourceService implements
     private Logger log= LoggerFactory.getLogger(getClass());
     @Autowired
     PermissionDao permissionDao;
+
+    @Autowired
+    RoleDao roleDao;
     /**
      * 资源权限
      */
@@ -37,14 +42,17 @@ public class CustomInvocationSecurityMetadataSourceService implements
     @PostConstruct
     private void loadResourceDefine(){
         log.info("控制权限开始加载...");
-        Collection<ConfigAttribute> array;
+        Collection<ConfigAttribute> ConfigAttributes;
         ConfigAttribute cfg;
         List<PermissionPo> permissions = permissionDao.selectAllPermissionPo();
         for(PermissionPo permission : permissions) {
-            array = new ArrayList<>();
-            cfg = new SecurityConfig(permission.getPermName());
-            array.add(cfg);
-            configAttributeCache.put(permission.getResouce(), array);
+            ConfigAttributes = new ArrayList<>();
+             List<RolePo> roles= this.roleDao.selectRolesByResource(permission.getPermId());
+             for(RolePo rolePo:roles){
+                 cfg = new SecurityConfig(rolePo.getRoleName());
+                 ConfigAttributes.add(cfg);
+             }
+            configAttributeCache.put(permission.getResouce(), ConfigAttributes);
             if(log.isDebugEnabled()){
                 log.debug("权限名为{}对应的URL为{}",
                         permission.getPermName(),permission.getResouce());
@@ -67,9 +75,25 @@ public class CustomInvocationSecurityMetadataSourceService implements
                 return configAttributeCache.get(resUrl);
             }
         }
-        matcher = new AntPathRequestMatcher("/login");
+        matcher = new AntPathRequestMatcher("/login**");
         if(matcher.matches(request)){
            return null;
+        }
+        matcher = new AntPathRequestMatcher("/**/**/js/**");
+        if(matcher.matches(request)){
+            return null;
+        }
+        matcher = new AntPathRequestMatcher("/**/**/img/**");
+        if(matcher.matches(request)){
+            return null;
+        }
+        matcher = new AntPathRequestMatcher("/**/**/css/**");
+        if(matcher.matches(request)){
+            return null;
+        }
+        matcher = new AntPathRequestMatcher("/**/**/html/**");
+        if(matcher.matches(request)){
+            return null;
         }
         Collection<ConfigAttribute> nouse = new ArrayList<ConfigAttribute>();
         nouse.add(new SecurityConfig("NOT_ANY_PERMISSION"));

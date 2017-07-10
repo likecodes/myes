@@ -1,5 +1,7 @@
-package com.uxunchina.changsha.common.aut.service;
+package com.uxunchina.changsha.common.aut.service.impl;
 
+import com.uxunchina.changsha.common.aut.service.impl.CustomAccessDecisionManager;
+import com.uxunchina.changsha.common.aut.service.impl.CustomInvocationSecurityMetadataSourceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.SecurityMetadataSource;
 import org.springframework.security.access.intercept.AbstractSecurityInterceptor;
@@ -14,7 +16,7 @@ import java.io.IOException;
  * 安全拦截器
  * Created by leo on 2017/7/8.
  */
-@Service("customSecurityInterceptor")
+@Service
 public class CustomSecurityInterceptor extends AbstractSecurityInterceptor implements Filter {
 
     @Autowired
@@ -31,10 +33,15 @@ public class CustomSecurityInterceptor extends AbstractSecurityInterceptor imple
 //    }
 
 
+
+
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
 
     }
+
+
+
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {

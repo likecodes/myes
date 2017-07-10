@@ -1,6 +1,7 @@
 package com.uxunchina.changsha.common.aut.dao;
 
 import com.uxunchina.changsha.common.aut.pojo.po.PermissionPo;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -20,5 +21,7 @@ public interface PermissionDao {
     List<PermissionPo> selectAllPermissionPo();
 
     List<PermissionPo> selectPermissionByUserId(String userId);
+
+
 
 }

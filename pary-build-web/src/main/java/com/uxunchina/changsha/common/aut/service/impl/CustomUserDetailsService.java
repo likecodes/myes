@@ -1,12 +1,14 @@
-package com.uxunchina.changsha.common.aut.service;
+package com.uxunchina.changsha.common.aut.service.impl;
 
 import com.uxunchina.changsha.common.aut.dao.OperatorDao;
 import com.uxunchina.changsha.common.aut.dao.PermissionDao;
+import com.uxunchina.changsha.common.aut.dao.RoleDao;
 import com.uxunchina.changsha.common.aut.dao.RolePermissionDao;
 import com.uxunchina.changsha.common.aut.pojo.dto.UserDetailsDto;
 import com.uxunchina.changsha.common.aut.pojo.po.OperatorPo;
 import com.uxunchina.changsha.common.aut.pojo.po.PermissionPo;
 import com.uxunchina.changsha.common.aut.pojo.po.RolePermissionPo;
+import com.uxunchina.changsha.common.aut.pojo.po.RolePo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -24,26 +26,23 @@ import java.util.List;
  */
 @Service("customUserDetailsService")
 public class CustomUserDetailsService implements UserDetailsService {
-    @Autowired
-    private PermissionDao permissionDao;
 
     @Autowired
     private OperatorDao operatorDao;
+
+    @Autowired
+    private RoleDao roleDao;
 
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         OperatorPo operator=this.operatorDao.selectByUserName(username);
         if (operator != null) {
-            List<PermissionPo> permissions=this.permissionDao
-                    .selectPermissionByUserId(operator.getOperatorId());
+            List<RolePo> operatorRoles=this.roleDao.selectRolesByOperatorId(operator.getOperatorId());
             List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
-            for (PermissionPo permission : permissions) {
-                if (permission != null && permission.getPermName()!=null) {
-
-                    GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(permission.getPermName());
-                    grantedAuthorities.add(grantedAuthority);
-                }
+            for (RolePo role : operatorRoles) {
+                GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(role.getRoleName());
+                grantedAuthorities.add(grantedAuthority);
             }
             return new UserDetailsDto(operator.getUsername(), operator.getUserPassword(), grantedAuthorities);
         } else {
