@@ -79,6 +79,10 @@ public class CustomInvocationSecurityMetadataSourceService implements
         if(matcher.matches(request)){
            return null;
         }
+        matcher = new AntPathRequestMatcher("/login/**");
+        if(matcher.matches(request)){
+            return null;
+        }
         matcher = new AntPathRequestMatcher("/**/**/js/**");
         if(matcher.matches(request)){
             return null;
@@ -95,6 +99,12 @@ public class CustomInvocationSecurityMetadataSourceService implements
         if(matcher.matches(request)){
             return null;
         }
+
+        matcher = new AntPathRequestMatcher("/**/**/favicon.ico");
+        if(matcher.matches(request)){
+            return null;
+        }
+
         Collection<ConfigAttribute> nouse = new ArrayList<ConfigAttribute>();
         nouse.add(new SecurityConfig("NOT_ANY_PERMISSION"));
         return nouse;

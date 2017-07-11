@@ -26,6 +26,11 @@ public class PermissionPo {
      */
     private String parentId;
 
+    /**
+     * 权限类型,1.菜单，2 按钮
+     */
+    private String permType;
+
     public String getPermId() {
         return permId;
     }
@@ -66,6 +71,14 @@ public class PermissionPo {
         this.parentId = parentId;
     }
 
+    public String getPermType() {
+        return permType;
+    }
+
+    public void setPermType(String permType) {
+        this.permType = permType;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -77,6 +90,7 @@ public class PermissionPo {
         sb.append(", description=").append(description);
         sb.append(", resouce=").append(resouce);
         sb.append(", parentId=").append(parentId);
+        sb.append(", permType=").append(permType);
         sb.append("]");
         return sb.toString();
     }

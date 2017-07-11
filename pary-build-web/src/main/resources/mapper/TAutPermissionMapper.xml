@@ -1,104 +1,120 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.uxunchina.changsha.common.aut.dao.PermissionDao" >
-  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.common.aut.pojo.po.PermissionPo" >
-    <id column="PERM_ID" property="permId" jdbcType="VARCHAR" />
-    <result column="PERM_NAME" property="permName" jdbcType="VARCHAR" />
-    <result column="DESCRIPTION" property="description" jdbcType="VARCHAR" />
-    <result column="RESOUCE" property="resouce" jdbcType="VARCHAR" />
-    <result column="PARENT_ID" property="parentId" jdbcType="VARCHAR" />
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.uxunchina.changsha.common.aut.dao.PermissionDao">
+  <resultMap id="BaseResultMap" type="com.uxunchina.changsha.common.aut.pojo.po.PermissionPo">
+    <id column="PERM_ID" jdbcType="VARCHAR" property="permId" />
+    <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="RESOUCE" jdbcType="VARCHAR" property="resouce" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+    <result column="PERM_TYPE" jdbcType="VARCHAR" property="permType" />
   </resultMap>
-  <sql id="Base_Column_List" >
-    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID
+  <sql id="Base_Column_List">
+    PERM_ID, PERM_NAME, DESCRIPTION, RESOUCE, PARENT_ID, PERM_TYPE
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
-    select 
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
     <include refid="Base_Column_List" />
     from T_AUT_PERMISSION
     where PERM_ID = #{permId,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from T_AUT_PERMISSION
     where PERM_ID = #{permId,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.uxunchina.changsha.common.aut.pojo.po.PermissionPo" >
-    insert into T_AUT_PERMISSION (PERM_ID, PERM_NAME, DESCRIPTION, 
-      RESOUCE, PARENT_ID)
-    values (#{permId,jdbcType=VARCHAR}, #{permName,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
-      #{resouce,jdbcType=VARCHAR}, #{parentId,jdbcType=VARCHAR})
+  <insert id="insert" parameterType="com.uxunchina.changsha.common.aut.pojo.PermissionPo">
+    insert into T_AUT_PERMISSION (PERM_ID, PERM_NAME, DESCRIPTION,
+      RESOUCE, PARENT_ID, PERM_TYPE
+      )
+    values (#{permId,jdbcType=VARCHAR}, #{permName,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR},
+      #{resouce,jdbcType=VARCHAR}, #{parentId,jdbcType=VARCHAR}, #{permType,jdbcType=VARCHAR}
+      )
   </insert>
-  <insert id="insertSelective" parameterType="com.uxunchina.changsha.common.aut.pojo.po.PermissionPo" >
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.common.aut.pojo.PermissionPo">
     insert into T_AUT_PERMISSION
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="permId != null" >
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
         PERM_ID,
       </if>
-      <if test="permName != null" >
+      <if test="permName != null">
         PERM_NAME,
       </if>
-      <if test="description != null" >
+      <if test="description != null">
         DESCRIPTION,
       </if>
-      <if test="resouce != null" >
+      <if test="resouce != null">
         RESOUCE,
       </if>
-      <if test="parentId != null" >
+      <if test="parentId != null">
         PARENT_ID,
       </if>
+      <if test="permType != null">
+        PERM_TYPE,
+      </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="permId != null" >
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="permId != null">
         #{permId,jdbcType=VARCHAR},
       </if>
-      <if test="permName != null" >
+      <if test="permName != null">
         #{permName,jdbcType=VARCHAR},
       </if>
-      <if test="description != null" >
+      <if test="description != null">
         #{description,jdbcType=VARCHAR},
       </if>
-      <if test="resouce != null" >
+      <if test="resouce != null">
         #{resouce,jdbcType=VARCHAR},
       </if>
-      <if test="parentId != null" >
+      <if test="parentId != null">
         #{parentId,jdbcType=VARCHAR},
+      </if>
+      <if test="permType != null">
+        #{permType,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.common.aut.pojo.po.PermissionPo" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.uxunchina.changsha.common.aut.pojo.po.PermissionPo">
     update T_AUT_PERMISSION
-    <set >
-      <if test="permName != null" >
+    <set>
+      <if test="permName != null">
         PERM_NAME = #{permName,jdbcType=VARCHAR},
       </if>
-      <if test="description != null" >
+      <if test="description != null">
         DESCRIPTION = #{description,jdbcType=VARCHAR},
       </if>
-      <if test="resouce != null" >
+      <if test="resouce != null">
         RESOUCE = #{resouce,jdbcType=VARCHAR},
       </if>
-      <if test="parentId != null" >
+      <if test="parentId != null">
         PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+      <if test="permType != null">
+        PERM_TYPE = #{permType,jdbcType=VARCHAR},
       </if>
     </set>
     where PERM_ID = #{permId,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.uxunchina.changsha.common.aut.pojo.po.PermissionPo" >
+  <update id="updateByPrimaryKey" parameterType="com.uxunchina.changsha.common.aut.pojo.po.PermissionPo">
     update T_AUT_PERMISSION
     set PERM_NAME = #{permName,jdbcType=VARCHAR},
       DESCRIPTION = #{description,jdbcType=VARCHAR},
       RESOUCE = #{resouce,jdbcType=VARCHAR},
-      PARENT_ID = #{parentId,jdbcType=VARCHAR}
+      PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      PERM_TYPE = #{permType,jdbcType=VARCHAR}
     where PERM_ID = #{permId,jdbcType=VARCHAR}
   </update>
-  <select id="selectAllPermissionPo" resultMap="BaseResultMap" >
-   select * from  T_AUT_PERMISSION
+  <select id="selectAllPermissionPo" resultMap="BaseResultMap">
+   select
+    <include refid="Base_Column_List" />
+   from  T_AUT_PERMISSION
   </select>
-  <select id="selectPermissionByUserId" resultMap="BaseResultMap" >
+  <select id="selectPermissionByUserId" resultMap="BaseResultMap">
      SELECT D.PERM_ID,
             D.PERM_NAME,
             D.RESOUCE,
             D.PARENT_ID,
             D.DESCRIPTION
+            D.PERM_TYPE
     FROM T_AUT_OPERATOR A
        LEFT JOIN T_AUT_USER_ROLE B ON A.OPERATOR_ID = B.OPERATOR_ID
        LEFT JOIN T_AUT_ROLE_PERMISSION C ON B.ROLE_ID = C.ROLE_ID

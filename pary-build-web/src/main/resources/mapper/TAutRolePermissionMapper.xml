@@ -29,7 +29,7 @@
     </trim>
   </insert>
   <select id="selectByRoleId" resultMap="BaseResultMap" >
-    select * from T_AUT_ROLE_PERMISSION where ROLE_ID=#{roleId,jdbcType=VARCHAR}
+    select ROLE_ID,PERMISSION_ID from T_AUT_ROLE_PERMISSION where ROLE_ID=#{roleId,jdbcType=VARCHAR}
 
   </select>
 </mapper>

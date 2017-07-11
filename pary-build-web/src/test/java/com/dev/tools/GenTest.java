@@ -25,7 +25,7 @@ public class GenTest {
     @Before
     public void before() {
         //读取mybatis参数
-        configFile = new File("E:\\IdeaProject\\myes\\pary-build-web\\src\\test\\resources\\generatorConfig.xml");
+        configFile = new File("E:\\IdeaProject\\party-build\\pary-build-web\\src\\test\\resources\\generatorConfig.xml");
 //        configFile = new File("E:\\ideaProject\\party-build\\pary-build-web\\src\\test\\resources\\generatorConfig.xml");
 
     }
@@ -33,7 +33,7 @@ public class GenTest {
     @Test
     public void test() throws Exception{
         List<String> warnings = new ArrayList<String>();
-        boolean overwrite = true;
+        boolean overwrite = false;
         ConfigurationParser cp = new ConfigurationParser(warnings);
         Configuration config = cp.parseConfiguration(configFile);
         DefaultShellCallback callback = new DefaultShellCallback(overwrite);

@@ -11,6 +11,12 @@
 
     <artifactId>pary-build-web</artifactId>
     <dependencies>
+
+        <dependency>
+            <groupId>net.sourceforge.nekohtml</groupId>
+            <artifactId>nekohtml</artifactId>
+            <version>1.9.21</version>
+        </dependency>
     <!-- https://mvnrepository.com/artifact/org.compass-project/compass -->
     <dependency>
         <groupId>org.compass-project</groupId>

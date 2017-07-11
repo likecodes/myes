@@ -37,7 +37,7 @@
                 targetProject="src/main/java"
                 type="XMLMAPPER"/>
         <!--要生成哪些表 -->
-        <table tableName="T_AUT%"
+        <table tableName="T_AUT_PERMISSION"
                enableSelectByExample="false"
                enableDeleteByExample="false"
                enableCountByExample="false"
