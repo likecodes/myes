@@ -22,6 +22,9 @@ public interface PermissionDao {
 
     List<PermissionPo> selectPermissionByUserId(String userId);
 
+    List<PermissionPo> selectPermissionByUserName(String userName);
+
+
 
 
 }

@@ -122,4 +122,18 @@
        where A.OPERATOR_ID= #{userId,jdbcType=VARCHAR}
   </select>
 
+  <select id="selectPermissionByUserName" resultMap="BaseResultMap">
+    SELECT D.PERM_ID,
+    D.PERM_NAME,
+    D.RESOUCE,
+    D.PARENT_ID,
+    D.DESCRIPTION
+    D.PERM_TYPE
+    FROM T_AUT_OPERATOR A
+    LEFT JOIN T_AUT_USER_ROLE B ON A.OPERATOR_ID = B.OPERATOR_ID
+    LEFT JOIN T_AUT_ROLE_PERMISSION C ON B.ROLE_ID = C.ROLE_ID
+    LEFT JOIN T_AUT_PERMISSION D ON C.PERMISSION_ID = D.PERM_ID
+    where A.USERNAME= #{userName,jdbcType=VARCHAR}
+  </select>
+
 </mapper>
