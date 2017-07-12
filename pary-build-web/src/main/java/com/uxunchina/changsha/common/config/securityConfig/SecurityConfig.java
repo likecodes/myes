@@ -65,19 +65,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
             http.authorizeRequests()
-                .anyRequest()
-                .authenticated()
-                .and()
+                    .anyRequest()
+                    .authenticated()
+                    .and()
                 .formLogin()
-                .loginPage("/login")
-                .successForwardUrl("/index")
-                .failureUrl("/html/403.html")
-                .passwordParameter("password")
-                .usernameParameter("username")
-                .permitAll(true)
-                .and()
-                .logout()
-                .permitAll();//任何请求,登录后可以访问
+                    .loginPage("/login")
+                    .successForwardUrl("/index")
+                    .failureUrl("/html/403.html")
+                    .passwordParameter("password")
+                    .usernameParameter("username")
+                    .permitAll(true)
+                    .and()
+                    .logout()
+                    .permitAll();
         http.exceptionHandling().accessDeniedPage("/html/403.html");
     }
 }

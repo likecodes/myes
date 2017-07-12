@@ -9,14 +9,14 @@
     <meta name="description" content=""/>
     <meta name="author" content="" />
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>登录页面</title>
 
     <!-- Bootstrap Core CSS -->
-    <link th:href="@{css/bootstrap.css}" rel="stylesheet" />
+    <link th:href="@{~/css/bootstrap.css}" rel="stylesheet" />
 
 
     <!-- Custom CSS -->
-    <link th:href="@{css/sb-admin-2.css}" rel="stylesheet" />
+    <link th:href="@{~/css/sb-admin-2.css}" rel="stylesheet" />
 
 
 
@@ -41,7 +41,7 @@
         <div class="col-md-4 col-md-offset-4">
             <div class="login-panel panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">请登录四联双报后管理系统</h3>
+                    <h3 class="panel-title">请登录</h3>
                 </div>
                 <div class="panel-body">
                     <form role="form"  th:action="@{/login}" method="POST">
@@ -68,12 +68,12 @@
     </div>
 </div>
 <!-- jQuery -->
-<script th:src="@{js/jquery.js}"></script>
+<script th:src="@{~/js/jquery.js}"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script th:src="@{js/bootstrap.js}"></script>
+<script th:src="@{~/js/bootstrap.js}"></script>
 
 <!-- Custom Theme JavaScript -->
-<script th:src="@{/sb-admin-2.js}"></script>
+<script th:src="@{~/js/sb-admin-2.js}"></script>
 </body>
 </html>
