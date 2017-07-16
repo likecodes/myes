@@ -1,5 +1,7 @@
 package com.uxunchina.changsha.common.aut.control;
 
+import com.uxunchina.changsha.common.aut.pojo.dto.HttpJsonResponse;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -17,7 +19,7 @@ public class AuthCtrl {
 
     @RequestMapping("/index")
     public String index(){
-        return "index";
+        return "index.html";
     }
 
     @RequestMapping("/xxxx")
@@ -31,14 +33,23 @@ public class AuthCtrl {
        return "index";
     }
 
-    @RequestMapping("/login")
+    @RequestMapping("/loginPage")
     public String login(){
-        return "login";
+        return "/html/login.html";
     }
 
-    @RequestMapping("/hello1")
-    public String hello1(){
-        return "hello1";
+
+
+    @RequestMapping("/login/success")
+    public @ResponseBody HttpJsonResponse success() {
+        return new HttpJsonResponse("0", "登录成功");
+    }
+
+
+
+    @RequestMapping("/login/failure")
+    public @ResponseBody HttpJsonResponse failure() {
+        return new HttpJsonResponse("1", "用户名或密码不正确");
     }
 
     @RequestMapping("/403")

@@ -16,6 +16,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import javax.security.auth.login.Configuration;
 import javax.servlet.http.HttpServletRequest;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -27,6 +28,9 @@ import java.util.concurrent.ConcurrentHashMap;
 public class CustomInvocationSecurityMetadataSourceService implements
         FilterInvocationSecurityMetadataSource {
     private Logger log= LoggerFactory.getLogger(getClass());
+
+    private
+
     @Autowired
     PermissionDao permissionDao;
 
@@ -36,6 +40,7 @@ public class CustomInvocationSecurityMetadataSourceService implements
      * 资源权限
      */
     private Map<String, Collection<ConfigAttribute>> configAttributeCache =new ConcurrentHashMap<>();
+
     /**
      * 加载资源与权限的定义
      */
@@ -75,39 +80,10 @@ public class CustomInvocationSecurityMetadataSourceService implements
                 return configAttributeCache.get(resUrl);
             }
         }
-        matcher = new AntPathRequestMatcher("/login**");
-        if(matcher.matches(request)){
-           return null;
-        }
-        matcher = new AntPathRequestMatcher("/login/**");
-        if(matcher.matches(request)){
-            return null;
-        }
-        matcher = new AntPathRequestMatcher("/**/**/js/**");
-        if(matcher.matches(request)){
-            return null;
-        }
-        matcher = new AntPathRequestMatcher("/**/**/img/**");
-        if(matcher.matches(request)){
-            return null;
-        }
-        matcher = new AntPathRequestMatcher("/**/**/css/**");
-        if(matcher.matches(request)){
-            return null;
-        }
-        matcher = new AntPathRequestMatcher("/**/**/html/**");
-        if(matcher.matches(request)){
-            return null;
-        }
 
-        matcher = new AntPathRequestMatcher("/**/**/favicon.ico");
-        if(matcher.matches(request)){
-            return null;
-        }
-
-        Collection<ConfigAttribute> nouse = new ArrayList<ConfigAttribute>();
-        nouse.add(new SecurityConfig("NOT_ANY_PERMISSION"));
-        return nouse;
+        Collection<ConfigAttribute> configAttributes=new ArrayList<>(1);
+        configAttributes.add(new SecurityConfig("NO_ANY_URL_ACCESS"));
+        return configAttributes;
     }
 
     @Override
@@ -118,5 +94,12 @@ public class CustomInvocationSecurityMetadataSourceService implements
     @Override
     public boolean supports(Class<?> clazz) {
         return true;
+    }
+
+    public void addconfigAttribute(String path,String permission){
+        SecurityConfig securityConfig=new SecurityConfig(permission);
+        Collection<ConfigAttribute> configAttributes=new ArrayList<>(1);
+        configAttributes.add(securityConfig);
+        configAttributeCache.put(path,configAttributes);
     }
 }

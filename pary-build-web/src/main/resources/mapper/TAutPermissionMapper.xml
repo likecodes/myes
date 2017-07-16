@@ -22,7 +22,7 @@
     delete from T_AUT_PERMISSION
     where PERM_ID = #{permId,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.uxunchina.changsha.common.aut.pojo.PermissionPo">
+  <insert id="insert" parameterType="com.uxunchina.changsha.common.aut.pojo.po.PermissionPo">
     insert into T_AUT_PERMISSION (PERM_ID, PERM_NAME, DESCRIPTION,
       RESOUCE, PARENT_ID, PERM_TYPE
       )
@@ -30,7 +30,7 @@
       #{resouce,jdbcType=VARCHAR}, #{parentId,jdbcType=VARCHAR}, #{permType,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.uxunchina.changsha.common.aut.pojo.PermissionPo">
+  <insert id="insertSelective" parameterType="com.uxunchina.changsha.common.aut.pojo.po.PermissionPo">
     insert into T_AUT_PERMISSION
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="permId != null">

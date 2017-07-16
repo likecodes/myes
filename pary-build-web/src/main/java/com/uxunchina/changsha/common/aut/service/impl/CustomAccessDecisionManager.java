@@ -15,7 +15,6 @@ import java.util.Iterator;
  * 权限决策管理定制
  * Created by leo on 2017/7/8.
  */
-@Service
 public class CustomAccessDecisionManager implements AccessDecisionManager {
     /**
      *decide 方法是判定是否拥有权限的决策方法，
@@ -31,9 +30,8 @@ public class CustomAccessDecisionManager implements AccessDecisionManager {
                        Collection<ConfigAttribute> configAttributes)
             throws AccessDeniedException, InsufficientAuthenticationException {
         if(null== configAttributes || configAttributes.size() <=0) {
-            throw new AccessDeniedException("您的访问受限，请联系管理员！");
+           new AccessDeniedException("您的访问受限，请联系管理员！");
         }
-
         ConfigAttribute configAttribute;
         String needRole;
         for(Iterator<ConfigAttribute> iter = configAttributes.iterator(); iter.hasNext(); ) {
