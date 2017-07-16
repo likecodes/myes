@@ -109,11 +109,13 @@
    from  T_AUT_PERMISSION
   </select>
   <select id="selectPermissionByUserId" resultMap="BaseResultMap">
-     SELECT D.PERM_ID,
+     SELECT
+           distinct
+            D.PERM_ID,
             D.PERM_NAME,
             D.RESOUCE,
             D.PARENT_ID,
-            D.DESCRIPTION
+            D.DESCRIPTION,
             D.PERM_TYPE
     FROM T_AUT_OPERATOR A
        LEFT JOIN T_AUT_USER_ROLE B ON A.OPERATOR_ID = B.OPERATOR_ID
@@ -123,11 +125,13 @@
   </select>
 
   <select id="selectPermissionByUserName" resultMap="BaseResultMap">
-    SELECT D.PERM_ID,
+    SELECT
+    distinct
+    D.PERM_ID,
     D.PERM_NAME,
     D.RESOUCE,
     D.PARENT_ID,
-    D.DESCRIPTION
+    D.DESCRIPTION,
     D.PERM_TYPE
     FROM T_AUT_OPERATOR A
     LEFT JOIN T_AUT_USER_ROLE B ON A.OPERATOR_ID = B.OPERATOR_ID

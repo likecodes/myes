@@ -1,4 +1,4 @@
-package com.uxunchina.changsha.common.base;
+package com.uxunchina.changsha.common.base.vo;
 
 import java.io.Serializable;
 
@@ -6,7 +6,7 @@ import java.io.Serializable;
  * 页面列表分页对象
  * Created by leo on 2017/7/7.
  */
-public class Page implements Serializable{
+public class PageVo implements Serializable{
     /**
 
      * 默认的序列化版本 id.
@@ -50,7 +50,7 @@ public class Page implements Serializable{
      */
     private int pageCount;
 
-    public Page() {
+    public PageVo() {
     }
 
     /**
@@ -64,7 +64,7 @@ public class Page implements Serializable{
      * @param length
 
      */
-    public Page(int begin, int length) {
+    public PageVo(int begin, int length) {
         this.begin = begin;
         this.length = length;
         this.end = this.begin + this.length;
@@ -80,7 +80,7 @@ public class Page implements Serializable{
      * @param count
 
      */
-    public Page(int begin, int length, int totalRecords) {
+    public PageVo(int begin, int length, int totalRecords) {
         this(begin, length);
         this.totalRecords = totalRecords;
     }
@@ -94,7 +94,7 @@ public class Page implements Serializable{
      * @param pageNo
 
      */
-    public Page(int pageNo) {
+    public PageVo(int pageNo) {
         this.pageNo = pageNo;
         pageNo = pageNo > 0 ? pageNo : 1;
         this.begin = this.length * (pageNo - 1);

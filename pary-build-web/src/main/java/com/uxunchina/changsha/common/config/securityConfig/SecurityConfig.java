@@ -76,7 +76,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                  .failureUrl("/login/failure").permitAll()
               .and()
                 .logout()
-                   .permitAll();//任何请求,登录后可以访问
+                .permitAll();//任何请求,登录后可以访问
         http.exceptionHandling().accessDeniedPage("/html/403.html");
 
         RoleVoter roleVoter=new RoleVoter();
